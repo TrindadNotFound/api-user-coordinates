@@ -28,13 +28,14 @@ service /api on new http:Listener(9090) {
     
     //Return all users
     resource function get allusers() returns User[]|error{
-        stream<User, sql:Error?> userStream = dbClient -> query(`SELECT * FROM userdata`);
-        return from var user in userStream select user; 
+        stream<User, sql:Error?> result = dbClient -> query(`SELECT * FROM userdata`);
+        return from var user in result select user; 
     }
 
     //Return a specific user by id
     resource function get userbyid/[int id]() returns User|error {
-        return error("");
+        User|sql:Error result = dbClient -> queryRow(`SELECT * FROM userdata WHERE id=${id}`);
+        return result;
     }
 
     //Create new user
