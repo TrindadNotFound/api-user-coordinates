@@ -1,4 +1,4 @@
-# API UserInfo and Geocoords
+# API UserInfo and GeoCoords
 
 Com base no deguinte payload JSON :
 ```
