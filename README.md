@@ -1,6 +1,6 @@
 # API UserInfo and GeoCoords
 
-Com base no deguinte payload JSON :
+Com base no seguinte payload JSON :
 ```
   {
     "name":"Jane Doe",
